@@ -1,0 +1,193 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://environment/background.png" type="Texture" id=1]
+[ext_resource path="res://menu/main_title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/button_exit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menu/levels.gd" type="Script" id=4]
+[ext_resource path="res://menu/button_level.tscn" type="PackedScene" id=5]
+
+[node name="levels" type="Node"]
+script = ExtResource( 4 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 64.0
+margin_right = -40.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="margin"]
+margin_right = 208.0
+margin_bottom = 404.0
+alignment = 1
+
+[node name="main_title" parent="margin/menu" instance=ExtResource( 2 )]
+margin_right = 208.0
+
+[node name="GridContainer" type="GridContainer" parent="margin/menu"]
+margin_top = 68.0
+margin_right = 208.0
+margin_bottom = 336.0
+columns = 3
+
+[node name="button_level1" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level1" index="0"]
+text = "LVL 1"
+
+[node name="button_level2" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level2" index="0"]
+text = "LVL 2"
+
+[node name="button_level3" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level3" index="0"]
+text = "LVL 3"
+
+[node name="button_level4" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level4" index="0"]
+text = "LVL 4"
+
+[node name="button_level5" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level5" index="0"]
+text = "LVL 5"
+
+[node name="button_level6" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 136.0
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 132.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level6" index="0"]
+text = "LVL 6"
+
+[node name="button_level7" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level7" index="0"]
+text = "LVL 7"
+
+[node name="button_level8" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level8" index="0"]
+text = "LVL 8"
+
+[node name="button_level9" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 136.0
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level9" index="0"]
+text = "LVL 9"
+
+[node name="button_level10" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_top = 204.0
+margin_right = 64.0
+margin_bottom = 268.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level10" index="0"]
+text = "LVL 10"
+
+[node name="button_level11" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 68.0
+margin_top = 204.0
+margin_right = 132.0
+margin_bottom = 268.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level11" index="0"]
+text = "LVL 11"
+
+[node name="button_level12" parent="margin/menu/GridContainer" instance=ExtResource( 5 )]
+margin_left = 136.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 268.0
+
+[node name="Label" parent="margin/menu/GridContainer/button_level12" index="0"]
+text = "LVL 12"
+
+[node name="button_exit" parent="margin/menu" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_top = 340.0
+margin_right = 208.0
+margin_bottom = 404.0
+
+[node name="button" parent="margin/menu/button_exit" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+[connection signal="pressed" from="margin/menu/GridContainer/button_level1" to="." method="_on_button_level1_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level2" to="." method="_on_button_level2_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level3" to="." method="_on_button_level3_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level4" to="." method="_on_button_level4_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level5" to="." method="_on_button_level5_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level6" to="." method="_on_button_level6_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level7" to="." method="_on_button_level7_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level8" to="." method="_on_button_level8_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level9" to="." method="_on_button_level9_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level10" to="." method="_on_button_level10_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level11" to="." method="_on_button_level11_pressed"]
+[connection signal="pressed" from="margin/menu/GridContainer/button_level12" to="." method="_on_button_level12_pressed"]
+[connection signal="pressed" from="margin/menu/button_exit/button" to="." method="_on_exit_button_pressed"]
+
+[editable path="margin/menu/GridContainer/button_level1"]
+
+[editable path="margin/menu/GridContainer/button_level2"]
+
+[editable path="margin/menu/GridContainer/button_level3"]
+
+[editable path="margin/menu/GridContainer/button_level4"]
+
+[editable path="margin/menu/GridContainer/button_level5"]
+
+[editable path="margin/menu/GridContainer/button_level6"]
+
+[editable path="margin/menu/GridContainer/button_level7"]
+
+[editable path="margin/menu/GridContainer/button_level8"]
+
+[editable path="margin/menu/GridContainer/button_level9"]
+
+[editable path="margin/menu/GridContainer/button_level10"]
+
+[editable path="margin/menu/GridContainer/button_level11"]
+
+[editable path="margin/menu/GridContainer/button_level12"]
+
+[editable path="margin/menu/button_exit"]

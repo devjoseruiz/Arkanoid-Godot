@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/background.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1, 1 )
+
+[node name="environment" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="borders" type="Node2D" parent="."]
+
+[node name="border_left" type="StaticBody2D" parent="borders"]
+position = Vector2( -4, 256 )
+scale = Vector2( 4, 256 )
+
+[node name="col_border_left" type="CollisionShape2D" parent="borders/border_left"]
+shape = SubResource( 1 )
+
+[node name="border_top" type="StaticBody2D" parent="borders"]
+position = Vector2( 144, -4 )
+scale = Vector2( 152, 4 )
+
+[node name="col_border_top" type="CollisionShape2D" parent="borders/border_top"]
+shape = SubResource( 1 )
+
+[node name="border_bottom" type="StaticBody2D" parent="borders"]
+position = Vector2( 144, 516 )
+scale = Vector2( 152, 4 )
+
+[node name="col_border_bottom" type="CollisionShape2D" parent="borders/border_bottom"]
+shape = SubResource( 1 )
+
+[node name="border_right" type="StaticBody2D" parent="borders"]
+position = Vector2( 292, 256 )
+scale = Vector2( 4, 256 )
+
+[node name="col_border_right" type="CollisionShape2D" parent="borders/border_right"]
+shape = SubResource( 1 )

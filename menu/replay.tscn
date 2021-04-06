@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menu/replay.gd" type="Script" id=1]
+[ext_resource path="res://menu/button_replay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/button_exit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menu/button_back.tscn" type="PackedScene" id=4]
+
+[node name="replay" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0470588, 0.0196078, 0.196078, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 128.0
+margin_right = -40.0
+margin_bottom = -128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="margin"]
+margin_right = 208.0
+margin_bottom = 256.0
+alignment = 1
+
+[node name="button_replay" parent="margin/menu" instance=ExtResource( 2 )]
+anchor_right = 0.0
+margin_top = 28.0
+margin_right = 208.0
+margin_bottom = 92.0
+
+[node name="button" parent="margin/menu/button_replay" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+
+[node name="button_back" parent="margin/menu" instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_top = 96.0
+margin_right = 208.0
+margin_bottom = 160.0
+
+[node name="button" parent="margin/menu/button_back" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+
+[node name="button_exit" parent="margin/menu" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_top = 164.0
+margin_right = 208.0
+margin_bottom = 228.0
+
+[node name="button" parent="margin/menu/button_exit" index="0"]
+margin_left = 72.0
+margin_right = 136.0
+[connection signal="pressed" from="margin/menu/button_replay/button" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="margin/menu/button_back/button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="margin/menu/button_exit/button" to="." method="_on_exit_button_pressed"]
+
+[editable path="margin/menu/button_replay"]
+
+[editable path="margin/menu/button_back"]
+
+[editable path="margin/menu/button_exit"]
